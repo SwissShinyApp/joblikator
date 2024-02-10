@@ -1,0 +1,94 @@
+
+---
+output:
+  pdf_document:
+    keep_tex: true
+    latex_engine: xelatex
+    includes:
+      in_header: header_letter.tex
+params:
+  header: NULL
+  text: NULL
+
+
+---
+
+
+<!-- <!-- DON'T TOUCH ANYTHING ABOVE THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING --> 
+
+```{r setup, include=FALSE}
+## DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# library(fontawesome)
+# library(kableExtra)
+#library(huxtable)
+#library(gridExtra)
+library(magrittr)
+# \mytitle{Bewerbung als Kammerjäger}
+
+```
+
+
+\definecolor{mycolor}{HTML}{`r params$header$color`}
+\helveticatext
+
+
+\rhead{
+  \centering
+  \myname{\textcolor{mycolor}{`r params$header$name`}}
+  \myaddress{ | }
+  \myaddress{`r params$header$address`}
+  \myaddress{ | }
+  \myaddress{`r params$header$email`}
+}
+
+\fancyfoot[L]{\myfooter{\today}}
+\fancyfoot[C]{\myfooter{`r params$header$footer`}}
+\fancyfoot[R]{\myfooter{\thepage}}
+\addtolength{\footskip}{-80pt}
+\thispagestyle{fancy}
+
+
+\begin{flushleft}
+\textbf{`r params$text$company_address_1` \hfill \today} \\
+`r params$text$company_address_2` 
+`r params$text$company_address_3`
+\end{flushleft}
+
+\
+\
+
+\textcolor{mycolor}{`r params$text$letter_title`}
+============================================
+
+\
+
+`r params$text$concern`,
+
+`r params$text$intro`
+
+`r params$text$main`
+
+`r params$text$company`
+
+`r params$text$final`
+
+
+\
+
+\begin{adjustwidth}{2em}{}
+
+`r params$header$greeting_line`
+
+`r params$header$name`
+
+
+```{r, echo=FALSE, warning=FALSE, out.height='50pt', fig.align='left'}
+img_path <- params$header$signature
+if (file.exists(img_path)) {
+  knitr::include_graphics(img_path)
+}
+```
+
+\end{adjustwidth}

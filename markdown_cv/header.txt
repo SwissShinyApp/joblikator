@@ -1,0 +1,9 @@
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{colortbl}
+\arrayrulecolor{white}
+\usepackage{hhline}
+\definecolor{light-gray}{gray}{0.95}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\definecolor{customcolor}{HTML}{2C5890}

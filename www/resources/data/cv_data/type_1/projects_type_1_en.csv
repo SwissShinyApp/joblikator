@@ -1,0 +1,9 @@
+name,sum,type,lang,link
+dataCheckR,dataCheckR: Machine learning model to predict IoT sensor errors.,Client Project,"R, Python, GANs, SVM",https://odapes.github.io/dataCheckR/markdown/dataCheckR_documentation.html
+ODAPES Project,ODAPES: A low-code R-Shiny extension with eight R and JS packages.,Client Project,"R, Python, SQL, JS",https://odapes.github.io/OdsDataStore/index.html
+DeepWorkApp,R-Shiny App: Task planner using time-blocking for daily to quarterly tasks.,Academia,"R, JS, HTML, CSS",https://github.com/michaelcrubin/deepwork
+Nestle Dissection,Nestle Project: AI model predicts toxic substances via satellite data.,Client Project,"R, Python",https://cdn.odapes.app/michael/nestle/nestle_dissecacao_proposta_1.html
+Interpolaton Study,Geospatial Study: Evaluated interpolation data error distributions.,Academia,"R, JS, HTML, CSS",https://github.com/michaelcrubin/interpolation_study
+R Shiny Conference 2022,R-Shiny 2022: Presented GIS applications across sectors using R-Shiny.,Media,R-Shiny,https://youtu.be/t33IITZR6V4
+R Shiny Conference 2023,R-Shiny 2023: Showcased a low-code extension development via R-Shiny.,Media,R-Shiny,https://youtu.be/mrVac5VM4V0
+Embrapa Talk,Embrapa Brazil Speech: Explored AI's importance in agriculture.,Media,AI,https://youtu.be/JWrEs7vvIzk

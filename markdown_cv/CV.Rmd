@@ -1,0 +1,146 @@
+---
+name: "`r params$header$name`"
+position: "\\Large `r params$highlight$job_title`"
+address: | 
+         |
+         | `r if (!is.na(params$header$address_line)) params$header$address_line`
+profilepic: "`r params$header$profilpic`"
+phone: "`r if (!is.na(params$header$phone)) as.character(params$header$phone)`"
+email: "`r as.character(params$header$email)`"
+github: "`r if (!is.na(params$header$github)) params$header$github`"
+linkedin: "`r if (!is.na(params$header$linkedin)) params$header$linkedin`"
+www: "`r if (!is.na(params$header$www)) params$header$www`"
+headcolor: "`r params$highlight$color`"
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    keep_tex: false
+    show_footer: true
+    includes:
+      in_header: header.txt
+params:
+  header: NULL
+  data: NULL
+  highlight: NULL
+always_allow_html: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- DON'T TOUCH ANYTHING ABOVE THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING -->
+
+```{r setup, include=FALSE}
+## DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+#library(ggrepel)
+library(emojifont)
+library(fontawesome)
+library(kableExtra)
+#library(huxtable)
+#library(gridExtra)
+library(magrittr)
+
+replace_ampersand <- function(df) {
+  # Apply gsub function to replace "&" with "\&" in all character columns
+  df[] <- lapply(df, function(x) {
+    if(is.character(x)) {
+      x <- iconv(x, to = "UTF-8", sub = "")
+      gsub("&", "\\&", x, fixed = TRUE)
+    } else {
+      x
+    }
+  })
+  return(df)
+}
+
+```
+
+\
+
+<!-- YOU CAN CHANGE OR TRANSLATE THE PART "Why I'm the right fit for" IF YOU LIKE -->
+<!-- IF YOU WANT TO DELETE THIS SECTION, DELETE EVERYTHING UNTIL THE NEXT GREEN TEXT LINE -->
+\faIcon{check-circle} `r params$highlight$hl_title`
+============================================
+
+```{r color-definition, results='asis', echo=FALSE}
+cat(paste0("\\definecolor{customcolor}{HTML}{", params$highlight$color, "}"))
+```
+\begin{multicols}{3}
+\begin{tcolorbox}[colback=customcolor!50, colframe=customcolor!50, coltext=white, size=small]
+    \begin{center}
+        `r params$highlight$highlight_1`
+    \end{center}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=customcolor!50, colframe=customcolor!50, coltext=white, size=small]
+    \begin{center}
+          `r params$highlight$highlight_2`
+    \end{center}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=customcolor!50, colframe=customcolor!50, coltext=white, size=small]
+    \begin{center}
+          `r params$highlight$highlight_3`
+    \end{center}
+\end{tcolorbox}
+\end{multicols}
+
+
+<!-- YOU CAN CHANGE OR TRANSLATE THE PART "Professional Experience" IF YOU LIKE -->
+<!-- IF YOU WANT TO DELETE THIS SECTION, DELETE EVERYTHING UNTIL THE NEXT GREEN TEXT LINE -->
+\faIcon{briefcase} Professional Experience
+============================================
+
+
+```{r work}
+## DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+params$data$work %>% replace_ampersand() %>%
+  detailed_entries(company, dates, position, loc, details, .protect=FALSE)
+
+```
+
+
+\newpage
+
+<!-- YOU CAN CHANGE OR TRANSLATE THE PART "Education" IF YOU LIKE -->
+<!-- IF YOU WANT TO DELETE THIS SECTION, DELETE EVERYTHING UNTIL THE NEXT GREEN TEXT LINE -->
+\faIcon{university} Education
+==================================
+
+
+```{r education}
+## DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+params$data$education %>% replace_ampersand() %>%
+  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
+
+```
+
+
+<!-- YOU CAN CHANGE OR TRANSLATE THE PART "Skills" IF YOU LIKE -->
+<!-- IF YOU WANT TO DELETE THIS SECTION, DELETE EVERYTHING UNTIL THE NEXT GREEN TEXT LINE -->
+\faIcon{brain} Skills
+================================
+
+```{r skills}
+## DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+params$data$skills  %>% replace_ampersand() %>%
+  detailed_entries(
+    with = area,
+    what = skill
+  )
+
+```
+
+
+\
+\
+<!-- YOU CAN CHANGE OR TRANSLATE THE PART "For references and restimonials, please contact me." IF YOU LIKE -->
+
+\textcolor[HTML]{8B0000}{\textit{Important information: I have a valid work permit for Switzerland.}}
+
+<!-- IF YOU WANT TO DELETE THIS SECTION, DELETE EVERYTHING -->
+\textcolor{lightgray}{\textit{For references and testimonials, please contact me.}}
+
+

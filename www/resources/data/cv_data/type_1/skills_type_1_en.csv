@@ -1,0 +1,54 @@
+﻿area,skill
+Programming Languages,R
+Programming Languages,Python
+Programming Languages,SQL
+Programming Languages,Java Script
+Programming Languages,C++
+,
+"Data Science, Machine Learning and AI","Classifyer, Regression models, clustering"
+"Data Science, Machine Learning and AI","Neural Networks, CNN"
+"Data Science, Machine Learning and AI","Reinforcement Learning, Q-Learning"
+"Data Science, Machine Learning and AI",Recommender 
+"Data Science, Machine Learning and AI",Natural Language Models
+"Data Science, Machine Learning and AI",GPT-3.5
+,
+Most used Packages,R-Shiny and family
+Most used Packages,Tidyverse
+Most used Packages,ggplot
+Most used Packages,DataTable
+Most used Packages,NumPy and Pandas
+Most used Packages,Plotly
+Most used Packages,Scikit-learn
+Most used Packages,Pytorch
+Most used Packages,Keras
+Most used Packages,Tensorflow
+Most used Packages,Leaflet
+Most used Packages,sf
+Most used Packages,Geopandas
+,
+,
+Markup Languages and Others,HTML
+Markup Languages and Others,CSS
+Markup Languages and Others,Markdown
+Markup Languages and Others,RMarkdown
+Markup Languages and Others,LATEX 
+Markup Languages and Others,YAML
+Markup Languages and Others,Jupyter Notebooks
+,
+,
+,
+Tools and IDEs,GIT
+Tools and IDEs,Rstudio
+Tools and IDEs,VS Code
+Tools and IDEs,"Anaconda, Spyder"
+Tools and IDEs,mySQL
+,
+,
+,
+,
+,
+Human Languages,German
+Human Languages,English
+Human Languages,Portuguese
+Human Languages,French
+Human Languages,Spanish

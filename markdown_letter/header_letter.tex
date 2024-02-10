@@ -1,0 +1,46 @@
+% Main LaTeX Document
+
+% Load additional packages and define settings
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\pagestyle{fancy}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{colortbl}
+\arrayrulecolor{white}
+\usepackage{hhline}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{changepage}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+% % Set up header and footer
+
+\definecolor{light-gray}{HTML}{9099a1}
+\definecolor{darkgray}{HTML}{44484C}
+
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\textcolor{light-gray}{\rule{\headwidth}{\headrulewidth}}}
+
+\pagestyle{plain}
+
+\setmainfont{Helvetica-Light}
+
+
+\AtBeginDocument{\setlength{\baselineskip}{1.2\baselineskip}}
+
+
+\newfontfamily\helveticaname{Helvetica-Light}[LetterSpace=25]
+\newfontfamily\helveticaaddress{Helvetica-Light}[Color=light-gray]
+\newfontfamily\helveticatext{Helvetica-Light}[Color=darkgray]
+\newfontfamily\helveticafooter{Helvetica-Light}[Color=light-gray, LetterSpace=20]
+
+
+\newcommand{\myname}[1]{{\helveticaname\small\textbf{#1}}}
+\newcommand{\myaddress}[1]{{\helveticaaddress\small\textbf{#1}}}
+\newcommand{\myparagraph}[1]{{\helveticatext\normalsize #1}}
+\newcommand{\myfooter}[1]{{\helveticafooter\scriptsize #1}}
+

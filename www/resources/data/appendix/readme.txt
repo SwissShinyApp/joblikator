@@ -1,0 +1,1 @@
+Copy all files you want to add to your application to this folder. Examples are diploma or reference letters.
